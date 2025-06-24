@@ -1,6 +1,7 @@
 use anchor_lang::prelude::*;
 
 #[account]
+#[derive(InitSpace)]
 pub struct Candidate {
     pub candidate: Pubkey,
     pub vesting_account: Pubkey,
