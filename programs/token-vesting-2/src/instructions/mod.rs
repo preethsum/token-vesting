@@ -1,3 +1,5 @@
-pub mod initialize;
+pub mod initialize_vesting;
+pub use initialize_vesting::*;
 
-pub use initialize::*;
+pub mod add_candidate;
+pub use add_candidate::*;

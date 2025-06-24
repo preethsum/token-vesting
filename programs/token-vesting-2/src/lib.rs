@@ -15,7 +15,12 @@ declare_id!("7VHr7hzjiGxp5sDw1HVrxFi2iaYNbgYb7GxSty64WnRX");
 pub mod token_vesting_2 {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        initialize::handler(ctx)
+    pub fn initialize_vesting(ctx: Context<InitializeVesting>, company_name: String) -> Result<()> {
+        initialize_vesting::create_vesting_account(ctx, company_name);
+        Ok(())
+    }
+
+    pub fn add_candidate(ctx: Context<AddCandidate>) -> Result<()> {
+        Ok(())
     }
 }
