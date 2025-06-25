@@ -68,7 +68,7 @@ pub fn create_candidate_account(
 ) -> Result<()> {
     *ctx.accounts.candidate_account = Candidate {
         candidate: ctx.accounts.candidate.key(),
-        vesting_account: ctx.accounts.vesting.key(),
+        vesting: ctx.accounts.vesting.key(),
         total_amount: amount,
         start_time,
         end_time,

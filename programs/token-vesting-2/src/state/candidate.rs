@@ -4,7 +4,7 @@ use anchor_lang::prelude::*;
 #[derive(InitSpace)]
 pub struct Candidate {
     pub candidate: Pubkey,
-    pub vesting_account: Pubkey,
+    pub vesting: Pubkey,
     pub total_amount: u64,
     pub start_time: i64,
     pub end_time: i64,

@@ -6,6 +6,7 @@ pub mod state;
 use anchor_lang::prelude::*;
 
 pub use constants::*;
+pub use error::*;
 pub use instructions::*;
 pub use state::*;
 
@@ -27,7 +28,10 @@ pub mod token_vesting_2 {
         amount: u64,
     ) -> Result<()> {
         add_candidate::transfer_tokens_to_treasury(&ctx, amount)?;
-        add_candidate::create_candidate_account(ctx, start_time, end_time, cliff_time, amount)?;
+        add_candidate::create_candidate_account(ctx, start_time, end_time, cliff_time, amount)
+    }
+    pub fn claim_tokens(ctx: Context<ClaimTokens>) -> Result<()> {
+        // claim_tokens::claim(ctx)
         Ok(())
     }
 }
